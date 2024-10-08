@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="111dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:minHeight="156dp">
+
+    <ImageView
+        android:id="@+id/image_film"
+        android:layout_width="111dp"
+        android:layout_height="156dp"
+        android:foreground="@drawable/viewed_film_effect"
+        android:background="@drawable/image_effect"
+        android:clipToOutline="true"
+        android:contentDescription="@string/image_film"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/viewed_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:visibility="visible"
+        android:alpha="0.7"
+        android:src="@drawable/film_viewed_icon"
+        app:layout_constraintEnd_toEndOf="@id/image_film"
+        app:layout_constraintBottom_toBottomOf="@id/image_film" />
+
+    <TextView
+        android:id="@+id/reiting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:background="@drawable/rating_effect_blue"
+        android:clipToOutline="true"
+        android:paddingHorizontal="4dp"
+        android:paddingVertical="2dp"
+        android:text="@string/reiting"
+        android:textColor="@color/white"
+        android:textSize="6sp"
+        app:layout_constraintEnd_toEndOf="@id/image_film"
+        app:layout_constraintTop_toTopOf="@id/image_film" />
+
+    <TextView
+        android:id="@+id/film_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/film_name"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/image_film"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_film" />
+
+    <TextView
+        android:id="@+id/film_genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/film_genre"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/film_name"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/film_name" />
+
+    <ImageButton
+        android:id="@+id/show_all"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/show_all_effect"
+        android:src="@drawable/arrow_right"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <TextView
+        android:id="@+id/show_all_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/show_all_text"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_all" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

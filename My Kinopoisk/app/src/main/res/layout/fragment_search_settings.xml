@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.serch_settings.SearchSettingsFragment">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/back_button"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="9dp"
+            android:src="@drawable/back_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/list_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="22dp"
+            android:text="@string/search_settings"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/show_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/base_dimen"
+            android:layout_marginTop="16dp"
+            android:text="@string/show_filter"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list_name" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/films_filter_toggle"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/show_text"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/all_btn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/all"
+                android:textColor="@color/black"
+                app:cornerRadius="13dp"
+                app:strokeColor="@color/black" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/films_btn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="@string/films_setings"
+                android:textColor="@color/black"
+                app:strokeColor="@color/black" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/serials_btn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/serials_settings"
+                android:textColor="@color/black"
+                app:cornerRadius="13dp"
+                app:strokeColor="@color/black" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            android:id="@+id/country_title"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="@dimen/base_dimen"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:text="@string/country"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/films_filter_toggle" />
+
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lubaya"
+            app:layout_constraintBottom_toBottomOf="@id/country_title"
+            app:layout_constraintEnd_toEndOf="@id/country_title"
+            app:layout_constraintTop_toTopOf="@id/country_title" />
+
+        <TextView
+            android:id="@+id/genre_title"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="@dimen/base_dimen"
+            android:gravity="center_vertical"
+            android:text="@string/genre"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/country_title" />
+
+        <TextView
+            android:id="@+id/genre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/luboy"
+            app:layout_constraintBottom_toBottomOf="@id/genre_title"
+            app:layout_constraintEnd_toEndOf="@id/genre_title"
+            app:layout_constraintTop_toTopOf="@id/genre_title" />
+
+        <TextView
+            android:id="@+id/year_title"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="@dimen/base_dimen"
+            android:gravity="center_vertical"
+            android:text="@string/year_settings"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/genre_title" />
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/luboy"
+            app:layout_constraintBottom_toBottomOf="@id/year_title"
+            app:layout_constraintEnd_toEndOf="@id/year_title"
+            app:layout_constraintTop_toTopOf="@id/year_title" />
+
+        <TextView
+            android:id="@+id/rating_title"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="@dimen/base_dimen"
+            android:gravity="center"
+            android:text="@string/rating_settings"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/year_title" />
+
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/rating_slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:valueFrom="0"
+            android:valueTo="10"
+            app:labelBehavior="visible"
+            app:layout_constraintEnd_toEndOf="@id/rating_title"
+            app:layout_constraintStart_toStartOf="@+id/rating_title"
+            app:layout_constraintTop_toBottomOf="@+id/rating_title"
+            app:thumbColor="@color/white"
+            app:thumbStrokeWidth="1dp"
+            app:trackColor="@color/loader"
+            app:values="@array/values_range_rating" />
+
+        <TextView
+            android:id="@+id/sortir_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/base_dimen"
+            android:layout_marginTop="16dp"
+            android:text="@string/sortir_filter"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rating_slider" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/sortir_filter_toggle"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sortir_text"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/date_btn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/date_set"
+                android:textColor="@color/black"
+                app:cornerRadius="13dp"
+                app:strokeColor="@color/black" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/popular_btn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="@string/popular_set"
+                android:textColor="@color/black"
+                app:strokeColor="@color/black" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/rating_btn"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_set"
+                android:textColor="@color/black"
+                app:cornerRadius="13dp"
+                app:strokeColor="@color/black" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <ImageView
+            android:id="@+id/no_show_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/no_show_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sortir_filter_toggle" />
+
+        <TextView
+            android:id="@+id/no_show_text"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="@dimen/base_dimen"
+            android:gravity="center_vertical"
+            android:text="@string/on_show_state"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/no_show_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/no_show_btn"
+            app:layout_constraintTop_toTopOf="@id/no_show_btn" />
+
+        <Button
+            android:id="@+id/apply_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginBottom="@dimen/base_dimen"
+            android:backgroundTint="@color/loader"
+            android:text="ПРИМЕНИТЬ"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

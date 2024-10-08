@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.seasons_series_list.SeasonsSeriesListFragment">
+
+        <TextView
+            android:id="@+id/list_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="22dp"
+            android:text="@string/list_name"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/back_button"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="9dp"
+            android:src="@drawable/back_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/season"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="18dp"
+            android:text="@string/season"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_name" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chips_seasons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/season"
+            app:layout_constraintStart_toEndOf="@id/season"
+            app:layout_constraintTop_toTopOf="@+id/season"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/first_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:checked="true"
+                android:text="1"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:chipBackgroundColor="@color/white"
+                app:chipStrokeWidth="1dp"
+                app:textEndPadding="15dp"
+                app:textStartPadding="15dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/second_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="2"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:chipBackgroundColor="@color/white"
+                app:chipStrokeWidth="1dp"
+                app:textEndPadding="15dp"
+                app:textStartPadding="15dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/third_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="3"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:chipBackgroundColor="@color/white"
+                app:chipStrokeWidth="1dp"
+                app:textEndPadding="15dp"
+                app:textStartPadding="15dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/forth_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="4"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:chipBackgroundColor="@color/white"
+                app:chipStrokeWidth="1dp"
+                app:textEndPadding="15dp"
+                app:textStartPadding="15dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/fifth_chip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="5"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:chipBackgroundColor="@color/white"
+                app:chipStrokeWidth="1dp"
+                app:textEndPadding="15dp"
+                app:textStartPadding="15dp" />
+        </com.google.android.material.chip.ChipGroup>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/series_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/base_dimen"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/season"
+            app:layout_constraintTop_toBottomOf="@+id/chips_seasons"
+            tools:listitem="@layout/item_seriya" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

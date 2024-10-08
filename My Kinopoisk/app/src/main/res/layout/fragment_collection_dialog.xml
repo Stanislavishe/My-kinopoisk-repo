@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/create_collection_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/collection_dialog_effect"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:hint="@string/enter_collection_name"
+            app:boxStrokeColor="@color/loader"
+            app:counterMaxLength="40"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="top"
+                android:lines="4"
+                android:maxLength="50" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ready_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="@color/loader"
+            android:text="@string/ready"
+            app:cornerRadius="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_lay" />
+
+        <TextView
+            android:id="@+id/catch_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выберите значок"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ready_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_lay"
+            app:layout_constraintVertical_bias="0" />
+
+        <ImageButton
+            android:id="@+id/icons"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:backgroundTint="@android:color/transparent"
+            android:src="@drawable/home_icon"
+            app:layout_constraintEnd_toEndOf="@id/catch_icon"
+            app:layout_constraintStart_toStartOf="@id/catch_icon"
+            app:layout_constraintTop_toBottomOf="@id/catch_icon" />
+
+        <LinearLayout
+            android:id="@+id/cha_icons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/collection_dialog_effect"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/icons"
+            app:layout_constraintEnd_toEndOf="@+id/icons"
+            app:layout_constraintStart_toStartOf="@+id/icons"
+            app:layout_constraintTop_toBottomOf="@id/input_lay">
+
+            <ImageView
+                android:id="@+id/home"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="2dp"
+                android:src="@drawable/home_icon" />
+
+            <ImageView
+                android:id="@+id/heart"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="2dp"
+                android:src="@drawable/heart_icon" />
+
+            <ImageView
+                android:id="@+id/lock"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="2dp"
+                android:src="@drawable/lock_icon" />
+
+            <ImageView
+                android:id="@+id/cloud"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="2dp"
+                android:src="@drawable/cloud_icon" />
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="2dp"
+                android:src="@drawable/star_icon" />
+
+            <ImageView
+                android:id="@+id/bookmark"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_margin="2dp"
+                android:src="@drawable/bookmark_icon" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

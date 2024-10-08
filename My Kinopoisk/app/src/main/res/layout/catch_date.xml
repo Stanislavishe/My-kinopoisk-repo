@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:background="@drawable/chip_effect">
+
+    <TextView
+        android:id="@+id/catch_date_season"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1998-2009"
+        android:textColor="@color/loader"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/next_date"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:scaleX="-1"
+        android:src="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/back_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/back_date" />
+
+    <ImageView
+        android:id="@+id/back_date"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/back_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/catch_date_season"
+        app:layout_constraintEnd_toStartOf="@+id/next_date"
+        app:layout_constraintTop_toTopOf="@+id/catch_date_season" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/catch_date_season"
+        app:spanCount="3"
+        tools:layout_editor_absoluteX="26dp"
+        tools:listitem="@layout/chip" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

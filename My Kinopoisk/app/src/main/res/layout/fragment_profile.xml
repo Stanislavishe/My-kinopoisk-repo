@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.profile.ProfileFragment">
+
+            <TextView
+                android:id="@+id/list_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/base_dimen"
+                android:gravity="center_vertical"
+                android:paddingVertical="22dp"
+                android:text="@string/profile_title"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/premiers_text"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/base_dimen"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:text="@string/watching_yet"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/all_premiers"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/list_name" />
+
+            <TextView
+                android:id="@+id/all_premiers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/base_dimen"
+                android:text="@string/show_all"
+                android:textColor="@color/loader"
+                app:layout_constraintBottom_toBottomOf="@id/premiers_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/premiers_text" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/premiers_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/base_dimen"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/premiers_text"
+                tools:listitem="@layout/item_film" />
+
+            <TextView
+                android:id="@+id/collections_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/base_dimen"
+                android:layout_marginTop="36dp"
+                android:text="@string/collections_text"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/premiers_list" />
+
+            <ImageView
+                android:id="@+id/add_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/add_icon"
+                app:layout_constraintStart_toStartOf="@id/collections_text"
+                app:layout_constraintTop_toBottomOf="@id/collections_text" />
+
+            <TextView
+                android:id="@+id/create_collection"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="@string/create_collection"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/add_btn"
+                app:layout_constraintEnd_toEndOf="@+id/collections_recycler"
+                app:layout_constraintStart_toStartOf="@+id/add_btn"
+                app:layout_constraintTop_toTopOf="@id/add_btn" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/collections_recycler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="50dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_max="350dp"
+                app:layout_constraintStart_toStartOf="@+id/add_btn"
+                app:layout_constraintTop_toBottomOf="@+id/add_btn"
+                app:spanCount="2"
+                tools:listitem="@layout/item_collection" />
+
+            <TextView
+                android:id="@+id/interest_text"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/base_dimen"
+                android:layout_marginTop="40dp"
+                android:gravity="center_vertical"
+                android:text="@string/interested_yet"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/all_interest"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/collections_recycler" />
+
+            <TextView
+                android:id="@+id/all_interest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/base_dimen"
+                android:text="@string/show_all"
+                android:textColor="@color/loader"
+                app:layout_constraintBottom_toBottomOf="@id/interest_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/interest_text" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/interest_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/base_dimen"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/interest_text"
+                tools:listitem="@layout/item_film" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

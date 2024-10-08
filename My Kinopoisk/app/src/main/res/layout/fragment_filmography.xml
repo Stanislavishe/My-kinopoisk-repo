@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.filmography.FilmographyFragment">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/back_button"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="9dp"
+            android:src="@drawable/back_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/list_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="22dp"
+            android:text="@string/filmography_name"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <HorizontalScrollView
+            android:id="@+id/chips"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_name">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chips_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/director_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:checked="true"
+                    android:text="@string/director"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeWidth="1dp"
+                    app:textEndPadding="15dp"
+                    app:textStartPadding="15dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/producer_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:checked="true"
+                    android:text="@string/producer"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeWidth="1dp"
+                    app:textEndPadding="15dp"
+                    app:textStartPadding="15dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/writer_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:checked="true"
+                    android:text="@string/writer"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeWidth="1dp"
+                    app:textEndPadding="15dp"
+                    app:textStartPadding="15dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/actor_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:checked="true"
+                    android:text="@string/actor"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeWidth="1dp"
+                    app:textEndPadding="15dp"
+                    app:textStartPadding="15dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/actor_voice_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="@string/voice_actor"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeWidth="1dp"
+                    app:textEndPadding="15dp"
+                    app:textStartPadding="15dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/play_me_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:text="@string/play_me"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeWidth="1dp"
+                    app:textEndPadding="15dp"
+                    app:textStartPadding="15dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/film_list"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginEnd="17dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chips"
+            tools:listitem="@layout/item_filmography" />
+    </androidx.constraintlayout.widget.ConstraintLayout>

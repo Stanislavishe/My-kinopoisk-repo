@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.hello_screens.SecondFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_dimen"
+        android:layout_marginTop="38dp"
+        android:text="@string/app_name"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/skip_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="@dimen/base_dimen"
+        android:alpha="0.5"
+        android:text="@string/skip"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/second_image"
+        android:layout_width="360dp"
+        android:layout_height="270dp"
+        android:contentDescription="@string/second_hello_image"
+        android:src="@drawable/second_hello_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/create_collections"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_dimen"
+        android:text="@string/create_collections"
+        android:textColor="@color/black"
+        android:textSize="@dimen/hello_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_image"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <ImageView
+        android:id="@+id/white_ellipse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_dimen"
+        android:src="@drawable/ellipse_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_collections" />
+
+    <ImageView
+        android:id="@+id/second_white_ellipse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:src="@drawable/ellifse_black"
+        app:layout_constraintBottom_toBottomOf="@id/white_ellipse"
+        app:layout_constraintStart_toEndOf="@id/white_ellipse"
+        app:layout_constraintTop_toTopOf="@id/white_ellipse" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:src="@drawable/ellipse_white"
+        app:layout_constraintBottom_toBottomOf="@id/second_white_ellipse"
+        app:layout_constraintStart_toEndOf="@id/second_white_ellipse"
+        app:layout_constraintTop_toTopOf="@id/second_white_ellipse" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.actor_fillscreen.ActorFullscreenFragment">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/back_button"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="9dp"
+            android:src="@drawable/back_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/actor_photo"
+            android:layout_width="146dp"
+            android:layout_height="201dp"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/image_effect"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_button"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/actor_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="@dimen/base_dimen"
+            android:maxLines="2"
+            android:text="@string/full_actor_name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/actor_photo"
+            app:layout_constraintTop_toTopOf="@id/actor_photo" />
+
+        <TextView
+            android:id="@+id/actor_descr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="@dimen/base_dimen"
+            android:maxLines="2"
+            android:text="@string/actor_profess"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/actor_photo"
+            app:layout_constraintTop_toBottomOf="@id/actor_name" />
+
+        <TextView
+            android:id="@+id/best"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="40dp"
+            android:text="Лучшее"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/actor_photo" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/best_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="@+id/best"
+            app:layout_constraintTop_toBottomOf="@id/best"
+            tools:listitem="@layout/item_film" />
+
+        <TextView
+            android:id="@+id/filmography_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_dimen"
+            android:layout_marginTop="@dimen/margin_top"
+            android:text="@string/filmography"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/best_list" />
+
+        <TextView
+            android:id="@+id/on_list_but"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/base_dimen"
+            android:text="@string/on_list"
+            android:textColor="@color/loader"
+            app:layout_constraintBottom_toBottomOf="@+id/film_count"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/filmography_text" />
+
+        <TextView
+            android:id="@+id/film_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/s_films"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/filmography_text"
+            app:layout_constraintTop_toBottomOf="@id/filmography_text" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
