@@ -64,4 +64,5 @@ class SimilarFilmsAdapter(
         override fun areContentsTheSame(oldItem: SimilarFilm, newItem: SimilarFilm) =
             oldItem == newItem
     }
+    
 }
